@@ -13,23 +13,13 @@ jobs:
       - checkout
       - node/install:
           node-version: "20.9.0"
-      - run: "echo Staging deploy!"
+      - run: "echo product deploy!"
       - add_ssh_keys:
           fingerprints:
             - "fb:98:93:21:e8:f2:17:9d:79:e1:5e:cb:9f:f1:a8:f9"
       - run: "sudo apt-get update && sudo apt-get install -y rsync"
       - run:
-          name: "Install NPM packages"
-          command: |
-            cd app
-            npm install
-      - run:
-          name: "Build assets"
-          command: |
-            cd app
-            npm run build
-      - run:
-          name: "Staging deploy"
+          name: "product deploy"
           #command: "rsync -av --delete --exclude-from='rsync-exclude.txt' -e 'ssh -o StrictHostKeychecking=no -p 2222' ~/repo/ pinoko.jp-roughlang@ssh.lolipop.jp:/home/users/2/pinoko.jp-roughlang/web/roughlang.jp/stg/"
       - run:
           name: "Composer"
