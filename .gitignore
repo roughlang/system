@@ -5,35 +5,35 @@
 #
 # Note: if you want to stage/commit WP core files
 # you can delete this whole section/until Configuration.
-/wp-admin/
-/wp-content/index.php
-/wp-content/languages
-/wp-content/plugins/index.php
-/wp-content/themes/index.php
-/wp-includes/
-/index.php
-/license.txt
-/readme.html
-/wp-*.php
-/xmlrpc.php
+./system/wp-admin/
+./system/wp-content/index.php
+./system/wp-content/languages
+./system/wp-content/plugins/index.php
+./system/wp-content/themes/index.php
+./system/wp-includes/
+./system/index.php
+./system/license.txt
+./system/readme.html
+./system/wp-*.php
+./system/xmlrpc.php
 
 # Configuration
-wp-config.php
+./system/wp-config.php
 
 # Example themes
-/wp-content/themes/twenty*/
+./system/wp-content/themes/twenty*/
 
 # Example plugin
-/wp-content/plugins/hello.php
+./system/wp-content/plugins/hello.php
 
 # Uploads
-/wp-content/uploads/
+./system/wp-content/uploads/
 
 # Log files
 *.log
 
 # htaccess
-/.htaccess
+./system/.htaccess
 
 # All plugins
 #
@@ -46,3 +46,5 @@ wp-config.php
 # Note: If you wish to whitelist themes,
 # uncomment the next line
 #/wp-content/themes
+
+.DS_Store

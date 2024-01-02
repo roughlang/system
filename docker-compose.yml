@@ -16,7 +16,7 @@ services:
        - db
      build: .
      volumes:
-      - ./system:/var/www/html/wp-content/themes/system
+      - ./:/var/www/html/
      image: wordpress:latest
      ports:
        - "8209:80"
