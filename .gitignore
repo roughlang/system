@@ -19,6 +19,7 @@
 
 # Configuration
 ./system/wp-config.php
+system/wp-config.php
 
 # Example themes
 ./system/wp-content/themes/twenty*/

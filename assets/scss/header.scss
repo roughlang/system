@@ -1,0 +1,245 @@
+.device-bar {
+  height: 5px;
+  @media (max-width: 575px) {
+    background: #880000;
+    .bar-width::after {
+      content: "xs";
+    }
+  }
+  @media (min-width: 576px) and (max-width: 768px) { background: #444; }//sm
+  @media (min-width: 769px) and (max-width: 992px) { background: #555; }//md
+  @media (min-width: 993px) and (max-width: 1199px) { background: #666; }//lg
+  @media (min-width: 1200px) and (max-width: 1399px) { background: #000; }//xl
+  @media (min-width: 1400px) { background: #880000; }//xxl
+}
+
+
+
+.mesage-bar {
+  background: #333;
+  color: #fff;
+  font-size: 13px;
+  padding: 5px 18px;
+}
+
+/*---------------*/
+/* header navbar */
+/*---------------*/
+.web-header {
+  background: #0f0;
+  font-family: 'poppins';
+}
+.navbar {
+  font-family: 'poppins';
+
+  a.nav-link:link, a.nav-link:visited {
+    color: #888;
+  }
+  a.active:link, a.active:visited {
+    color: #333;
+  }
+  li.dropdown {
+    .dropdown-menu {
+      background: #333;
+      a:link, a:visited {
+        color: #fff;
+        text-decoration: none;
+      }
+      a:hover, a:active {
+        color: #333;
+        text-decoration: none;
+      }
+    }
+  }
+
+  // background-color: #ff0 !important;
+  .nav-signup-btn {
+    color: #fff;
+    background: #333;
+    border: 1px solid #333;
+  }
+  .nav-signup-btn:hover {
+    text-decoration: none;
+    background-color: #888;
+    opacity: 0.8;
+  }
+  .nav-login-btn {
+    color: #333;
+    background: #c1c1c1;
+    border: 1px solid #333;
+  }
+  .nav-login-btn:hover {
+    text-decoration: none;
+    background-color: #dcdcdc;
+    opacity: 0.8;
+  }
+}
+.navbar-toggler:active {
+background: #c1c1c1;
+}
+.navbar-toggler:focus {
+background: #f5f5f5;
+}
+.navbar-light .navbar-toggler {
+color: #fff;
+border: 1px #000;
+}
+.site-icon {
+width: 24px;
+height: 24px;
+}
+.site-name {
+  font-family: 'poppins';
+  color: #333;
+  @media (max-width: 575px) {
+    display: block;
+    
+  }
+  @media (min-width: 576px) { display: none; }
+}
+a.site-name:link, a.site-name:visited {
+  color: #333;
+}
+a.site-name:hover, a.site-name:active {
+  color: #333;
+  text-decoration: none;
+}
+
+.account-area-pc {
+  // background: #ff0;
+  @media (max-width: 575px) { display: none !important; }
+  @media (min-width: 576px) { display:flex; }
+  flex-diretion: row;
+  justify-content: flex-end;
+  @media (min-width: 576px) and (max-width: 768px) {width: 200px;}
+  @media (min-width: 769px) {width: 380px;}
+  .user_icon_area {
+    display:flex;
+    .user-name {
+      margin-top: 7px;
+      @media (max-width: 575px) {display: none;}
+      @media (min-width: 576px) and (max-width: 768px) {display: none;}
+      @media (min-width: 769px) {display: block;}
+    }
+    a {
+      display: block;
+    }
+  }
+  img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid #888;
+    object-fit: cover;
+  }
+}
+
+
+.account-area-sp {
+  
+  @media (max-width: 575px) {
+    display: block;
+    background: #e6e6e6;
+    margin: 0;
+    padding: 10px;
+    a.btn-login {
+      background: #c1c1c1;
+      border: 1px solid #333;
+      color: #333;
+    }
+    a.btn-login:hover, a.btn-login:active {
+      text-decoration: none;
+      background: #dcdcdc;
+    }
+    a.btn-signup {
+      color: #fff;
+      background: #333;
+      border: 1px solid #333;
+    }
+    a.btn-register {
+      color: #fff;
+      text-decoration: none;
+    }
+    a.btn-register:hover, a.btn-register:active {
+      background: #888;
+    }
+  }
+  @media (min-width: 576px) {
+    display: none !important;
+  }
+  margin: 0 20px;
+  img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #888;
+    object-fit: cover;
+  }
+}
+
+.nav-menu:hover {
+  cursor: hand;
+  cursor:pointer;
+}
+.account-area-menu-button {
+  border: none;
+  padding: 0;
+}
+.account-area-menu-button:hover,.account-area-menu-button:active,.account-area-menu-button:focus {
+  border: none;
+}
+.account-area-menu-modal {
+  // background: #333;
+  .modal-body {
+    ul {
+      list-style: none;
+      margin-left: -20px;
+      line-height: 27px;
+      li {
+        font-size: 20px;
+        line-height: 30px;
+        a:link, a:visited {
+          text-decoration: none;
+          color: #333;
+        }
+        a:hover, a:active {
+          color: #880000;
+        }
+      }
+      li.nav-logout:link, li.nav-logout:visited {
+        cursor: pointer;
+      }
+      li.nav-logout:hover, li.nav-logout:active {
+        cursor: pointer;
+        color: #880000;
+      }
+    }
+  }
+}
+
+/*--------*/
+/* footer */
+/*--------*/
+footer {
+  background: #333;
+  color: #fff;
+  font-family: 'poppins';
+  font-size: 13px;
+  padding: 5px 20px;
+  // position: fixed;
+  // left: 0;
+  // bottom: 0;
+  width: 100%;
+  .footer-menu {
+    ul {
+      li {
+        list-style: none;
+        margin-bottom: 10px;
+        a, a:link, a:visited, a:hover, a:active {
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

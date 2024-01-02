@@ -1,0 +1,22 @@
+.http-status {
+  font-family: 'poppins';
+  // background: #f00;
+  h3.code {
+    font-size: 30dvw;
+  }
+  p {
+    font-size: 30px;
+  }
+  p.link {
+    font-size: 15px;
+  }
+  .right-iamge {
+    text-align: right;
+    img {
+      // justify-content: flex-end;
+      
+      width: 70%;
+    }
+  }
+
+}
