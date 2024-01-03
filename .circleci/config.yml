@@ -1,0 +1,33 @@
+version: 2.1
+
+orbs:
+  browser-tools: circleci/browser-tools@1.1
+  node: circleci/node@5.0.2
+
+jobs:
+  product:
+    docker:
+      - image: cimg/base:stable
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - node/install:
+          node-version: "20.9.0"
+      - run: "echo product deploy!"
+      - add_ssh_keys:
+          fingerprints:
+            - "fb:98:93:21:e8:f2:17:9d:79:e1:5e:cb:9f:f1:a8:f9"
+      - run: "sudo apt-get update && sudo apt-get install -y rsync"
+      - run:
+          name: Add SSH key for ssh.lolipop.jp
+          command: ssh-keyscan -p 2222 ssh.lolipop.jp >> ~/.ssh/known_hosts
+      - run:
+          name: "product deploy"
+          command: "rsync -av --delete --exclude-from='rsync-exclude.txt' -e 'ssh -v -o StrictHostKeychecking=no -p 2222' ~/repo/ pinoko.jp-roughlang@ssh.lolipop.jp:/home/users/2/pinoko.jp-roughlang/web/roughlang.jp/system/"
+workflows:
+  deploy-workflow:
+    jobs:
+      - product:
+        filters:
+          branches:
+            only: main
