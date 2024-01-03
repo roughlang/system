@@ -94,3 +94,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
+
+
+/** add parameter */
+define( 'WP_BLOG_TITLE', 'blog title sample' );
+
+/** ENV */
+define( 'ENV', '../../.env' );
