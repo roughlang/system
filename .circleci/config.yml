@@ -19,8 +19,11 @@ jobs:
             - "fb:98:93:21:e8:f2:17:9d:79:e1:5e:cb:9f:f1:a8:f9"
       - run: "sudo apt-get update && sudo apt-get install -y rsync"
       - run:
+          name: Add SSH key for ssh.lolipop.jp
+          command: ssh-keyscan -p 2222 ssh.lolipop.jp >> ~/.ssh/known_hosts
+      - run:
           name: "product deploy"
-          command: "rsync -av --delete --exclude-from='rsync-exclude.txt' -e 'ssh -o StrictHostKeychecking=no -p 2222' ~/repo/ pinoko.jp-roughlang@ssh.lolipop.jp:/home/users/2/pinoko.jp-roughlang/web/roughlang.jp/system/"
+          command: "rsync -av --delete --exclude-from='rsync-exclude.txt' -e 'ssh -v -o StrictHostKeychecking=no -p 2222' ~/repo/ pinoko.jp-roughlang@ssh.lolipop.jp:/home/users/2/pinoko.jp-roughlang/web/roughlang.jp/system/"
 workflows:
   deploy-workflow:
     jobs:
